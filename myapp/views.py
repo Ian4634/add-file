@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 def index(request):
     objs = Product.objects.all().values_list('id', 'name')
-    return HttpResponse(objs)
+    return render(request, 'index.html')
