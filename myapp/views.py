@@ -6,7 +6,6 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 
 def index(request):
-<<<<<<< HEAD
     submitted = False
     if request.method == 'POST':
         form = ProductForm(request.POST)
@@ -25,7 +24,3 @@ def index(request):
             'form':form,
         }
         return render(request, 'index.html', context)
-=======
-    objs = Product.objects.all().values_list('id', 'name')
-    return HttpResponse(objs)
->>>>>>> parent of d41fab9... add index.html
