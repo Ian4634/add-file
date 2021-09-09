@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 def index(request):
     submitted = False
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/?submitted=True')
@@ -18,7 +18,8 @@ def index(request):
             submitted = True
             context = {
                     'form':ProductForm,
-                    'submitted':submitted,                        }
+                    'submitted':submitted,
+                    'request':request,                        }
             return render(request, 'index.html', context)
         context = {
             'form':form,
