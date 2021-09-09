@@ -7,7 +7,10 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ('name', 'category')
 
+        labels = {
+            'name':'product name'
+        }
         widgets = {
-            'name':forms.TextInput(attrs={'class':'form-control'}),
+            'name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'name'}),
             'category':forms.TextInput(attrs={'class':'form-control'})
         }
