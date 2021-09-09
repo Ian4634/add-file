@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <button type = 'submit'>submit</button>
+    <center>
+        <h1>testing form in django</h1>
+        <br/><br/>
+        {% if submitted%}
+        <h1>form submitted</h1>
+        {% else %}
+        <form action = '' method = 'POST'>
+            {% csrf_token %}
+
+            {{form.as_p}}
+            <button type="submit" class = btn btn-secondary>submit</button>
+        </form>
+        {% endif %}
+        
+    </center>
+    
 </body>
 </html>
