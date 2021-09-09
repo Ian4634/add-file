@@ -19,8 +19,8 @@ def index(request):
             context = {
                     'form':ProductForm,
                     'submitted':submitted,                        }
-            return render(request, 'indec.html', context)
+            return render(request, 'index.html', context)
         context = {
             'form':form,
         }
-        return render(request, 'indec.html', context)
+        return render(request, 'index.html', context)
